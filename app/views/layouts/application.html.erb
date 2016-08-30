@@ -2,29 +2,32 @@
 <html></html>
 <head>
   <title>Sanderfer Chau</title>
+  <script src="https://code.jquery.com/jquery-3.1.0.slim.min.js"   integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8="   crossorigin="anonymous"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+
   <nav class="navbar navbar-default">
     <div class="container">
       <div class="navbar-brand">
         <%= link_to "Sanderfer Chau", root_path %>
+    
       </div>
+        <span class="menu-trigger glyphicon glyphicon-align-justify"></span>
+
       <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a href="#"></a>
-          </li>
-          <li>
-            <%= link_to 'About Me', abouts_path %>
-          </li>
-          <li>
-            <a href="http://schaui6.github.io/sanderfer_chau_software_engineer.pdf" download>Resume</a>
-          </li>
-      </ul>
+        <li>
+          <%= link_to 'About Me', abouts_path %>
+        </li>
+        <li>
+          <a href="http://schaui6.github.io/sanderfer_chau_software_engineer.pdf" download>Resume</a>
+        </li>
+     
       <% if user_signed_in? %>
-        <ul class="nav navbar-nav navbar-right">
+        
           <li>
             <%= link_to '<i class="glyphicon glyphicon-plus"></i>'.html_safe, new_pin_path %>
           </li>
@@ -34,9 +37,9 @@
           <li>
             <%= link_to '<i class="glyphicon glyphicon-off"></i>'.html_safe,  destroy_user_session_path, method: :delete %>
           </li>
-        </ul>
+        
       <% else %>
-        <ul class="nav navbar-nav navbar-right">
+        
           <li>
             <%= link_to '<i class="glyphicon glyphicon-user"></i>'.html_safe, new_user_session_path %>
           </li>
@@ -62,3 +65,5 @@
     <a href="https://github.com/schaui6" class = "navbar-btn btn-default btn pull-right"><img src = "http://schaui6.github.io/imgs/gh2.png"></a>
     </div>
 </footer>
+
+
