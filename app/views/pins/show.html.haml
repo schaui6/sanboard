@@ -19,7 +19,7 @@
           .col-md-6
             %p.user
               Updated on
-              = @pin.user.updated_at
+              = @pin.user.updated_at.strftime(" %m/%d/%Y")
           .col-md-6
             .btn-group.pull-right
               - if user_signed_in? && @pin.user_id == current_user.id
