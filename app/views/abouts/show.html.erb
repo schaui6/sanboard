@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @about.title %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  
+</p>
+
+<p>
+  <strong>Paragraph one:</strong>
+  <%= @about.pone %>
+</p>
+
+<p>
+  <strong>Paragraph two:</strong>
+  <%= @about.ptwo %>
+</p>
+
+<p>
+  <strong>Paragraph three:</strong>
+  <%= @about.pthree %>
+</p>
+
+<p>
+  <strong>Paragraph four:</strong>
+  <%= @about.pfour %>
+</p>
+
+<p>
+  <strong>Paragraph five:</strong>
+  <%= @about.pfive %>
+</p>
+
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_about_path(@about) %> |
+  <%= link_to 'Back', abouts_path %>
+<% end %>

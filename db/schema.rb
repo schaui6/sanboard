@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160823024916) do
+ActiveRecord::Schema.define(version: 20160830013340) do
+
+  create_table "abouts", force: :cascade do |t|
+    t.string   "title"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.text     "paragraph_one"
+    t.text     "paragraph_two"
+    t.text     "paragraph_three"
+    t.text     "paragraph_four"
+    t.text     "paragraph_five"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.text     "pone"
+    t.text     "ptwo"
+    t.text     "pthree"
+    t.text     "pfour"
+    t.text     "pfive"
+  end
 
   create_table "pins", force: :cascade do |t|
     t.string   "title"
@@ -23,10 +43,23 @@ ActiveRecord::Schema.define(version: 20160823024916) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.text     "ingredients"
+    t.text     "technologies"
+    t.string   "link"
+    t.string   "github"
   end
 
   add_index "pins", ["user_id"], name: "index_pins_on_user_id"
+
+  create_table "sans", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.text     "paragraph_one"
+    t.text     "paragraph_two"
+    t.text     "paragraph_three"
+    t.text     "paragraph_four"
+    t.text     "paragraph_five"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

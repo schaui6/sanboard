@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>About Me</h1>
+
+
+<p><%= @about.pone %></p>
+<p><%= @about.ptwo %></p>
+<p><%= @about.pthree %></p>
+<p><%= @about.pfour %></p>
+<p><%= @about.pfive %></p>
+
+<% if user_signed_in? %>
+  <a href="/abouts/1/edit">Edit</a>
+<% end %>

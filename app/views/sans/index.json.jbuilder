@@ -1,0 +1,1 @@
+json.array! @sans, partial: 'sans/san', as: :san
