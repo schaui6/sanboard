@@ -1,0 +1,49 @@
+<div class="row" id="pin_show">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-heading pin_image">
+        <%= image_tag @pin.image.url %>
+      </div>
+      <div class="panel-body">
+        <h1>
+          <%= @pin.title %>
+        </h1>
+        Technologies:
+        <p class="description">
+          <%= @pin.technologies %>
+        </p>
+        <br/>
+        Description:
+        <p class="description">
+          <%= @pin.description %>
+        </p>
+        Link:
+        <p class="description">
+          <a href="https://<%= @pin.link %>"><%= @pin.link %></a>
+        </p>
+        Github:
+        <p class="description">
+          <a href="https://<%= @pin.github %>"><%= @pin.github %></a>
+        </p>
+      </div>
+      <div class="panel-footer">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="user">
+              Updated on
+              <%= @pin.user.updated_at.strftime(" %m/%d/%Y") %>
+            </p>
+          </div>
+          <div class="col-md-6">
+            <div class="btn-group pull-right">
+              <% if user_signed_in? && @pin.user_id == current_user.id %>
+                <%= link_to "Edit", edit_pin_path, class: "btn btn-default" %>
+                <%= link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
